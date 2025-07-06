@@ -1,0 +1,25 @@
+#spring.application.name=database_example
+spring:
+  web:
+    resources:
+      add-mappings: false
+  application:
+    name: idol_db
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/idol_db?autoReconnect=true&useUnicode=true&serverTimezone=Asia/Seoul
+    username: root
+    password: qwer1230
+
+  #JPA
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    #create, create-drop, update, validate, none
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+server:
+  port: 8081
